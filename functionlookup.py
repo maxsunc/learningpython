@@ -16,13 +16,18 @@ isinstance({"name": "John"}, dict) # True
 isinstance(10, (int, float)) # True if int or float
 
 #cast to a certain type
-int("10") # 10
-int("a") # ValueError
+int("10") # 10 int("a") # ValueError
+str(10) # "10"
 
 #get ascii value of a character
-ord("A") # returns ASCII value of character
+ord("A") # returns ASCII value of character ' and " are the same"
+chr(65) # returns character of ASCII value 65 = 'A'
 
 #check if a character is a digit
 "5".isdigit() # True
 "a".isdigit() # False
 
+#testing code (assetions)
+def testing(h, bounce, window, exp):
+    actual = bouncing_ball(h, bounce, window)
+    assert_equals(actual, exp)
