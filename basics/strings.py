@@ -23,4 +23,4 @@ course.title() # convert to titlecase "Python Man"
 print(course.find("man")) # find the index of the first occurrence of a substring
 print(course.replace("n", "N")) # replace a substring with another substring
 print("python" in course) # check if a substring exists in the string
- 
+print(course[0].islower) # true (only can return true on alphabet)
