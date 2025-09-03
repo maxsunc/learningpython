@@ -29,12 +29,15 @@ print(3 in my_set) # True
 
 # dictionary (key-value pairs) (hashmap)
 my_dict = {"name": "John", "age": 30}
-my_dict["age"] = 31 # update value
+
+my_dict["age"] = 31 # update value Note: can't increment a non-existent element
 my_dict["city"] = "New York" # add key-value pair
 del my_dict["name"] # remove key-value pair
+len(my_dict) # returns length of dictionary
 print(my_dict) # {'age': 31, 'city': 'New York'}
-print("age" in my_dict) # True
+print("age" in my_dict) # True (containsKey) equivalent my_dict.get("city") is not None
 print(my_dict.get("name")) # None (safer than my_dict["name"]) 
+
 
 #iterate through dictionary (defaultly goes thru keys)
 for key in my_dict:
@@ -73,3 +76,28 @@ def print_matrix(list_2d):
         for item in row:
             print(item, end=" ")
         print() # new line  
+
+#trees (linkedlist but with 2+ nodes)
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+# Example usage
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+
+
+
+#example (sum of trees, recursion is default)
+def find_sum(root):
+    if(root == None):
+        return 0
+    else:
+        return root.val + find_sum(root.left) + find_sum(root.right)
+        
+
+print("trees ex:")
+print("summ of tree is : " + str(find_sum(root)))
