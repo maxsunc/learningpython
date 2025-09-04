@@ -47,17 +47,22 @@ for value in my_dict.values(): # iterate values only
     print(value)
 
 
-#queue
+#queue (first in first out, tunnel)
 from collections import deque
 queue = deque()
-queue.append(1) # enqueue
-queue.append(2)
-item = queue.popleft() # dequeue only from left
+queue.append(1) # from right [1]
+queue.append(2) # [1,2]
+item = queue.popleft() # dequeue from left pop (is from right)
 print(item) # 1
 item = queue.popleft()
 print(item) # 2
 
-#stack
+#looping a queue until its empty
+while queue:
+    queue.popleft() 
+
+
+#stack (Last in = first out, laying bricks)
 stack = []
 stack.append(1) # push
 stack.append(2)
@@ -77,12 +82,19 @@ def print_matrix(list_2d):
             print(item, end=" ")
         print() # new line  
 
-#trees (linkedlist but with 2+ nodes)
+#graphs (something with a lot of connected nodes but can loop back)
+
+#trees (linkedlist but with 2+ nodes, nothing can loop back)
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
+#binary tree (only 2 nodes)
+#binary search tree (A binary tree in which for each node, 
+# all elements in its left subtree are less than the node, 
+# and all elements in its right subtree are greater than the node.)
 
 # Example usage
 root = TreeNode(1)

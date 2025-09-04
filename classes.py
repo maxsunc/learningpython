@@ -8,6 +8,7 @@ class Person:
     def __init__(self, name, age):  # Constructor
         # Instance variables (unique to each object)
         # Note: anything with self becomes Instance Variables
+        #NOTE: self is needed to define a function within a class
         self.name = name
         self.age = age
     
