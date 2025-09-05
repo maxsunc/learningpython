@@ -20,6 +20,13 @@ class Person:
     def have_birthday(self):
         self.age += 1
         return f"Happy birthday! Now I'm {self.age}"
+    
+    # recursive Function
+    def factorial(self, n):
+        if n == 0:
+            return 1
+        else:
+            return n * self.factorial(n-1) # must call functions with self
 
 # Creating objects (instances)
 person1 = Person("Alice", 25)
@@ -50,37 +57,3 @@ class Student(Person):  # Student inherits from Person
     # New method specific to Student
     def study(self):
         return f"{self.name} is studying"
-
-# Using inheritance
-student = Student("Charlie", 20, "S123")
-print(student.greet())  # Hi, I'm Charlie, student ID: S123
-print(student.study())  # Charlie is studying
-print(student.have_birthday())  # Inherited method works too
-
-# Private attributes (convention: prefix with _)
-class BankAccount:
-    def __init__(self, balance):
-        self._balance = balance  # "private" by convention
-    
-    def deposit(self, amount):
-        self._balance += amount
-    
-    def get_balance(self):
-        return self._balance
-
-account = BankAccount(100)
-account.deposit(50)
-print(account.get_balance())  # 150
-# print(account._balance)  # Works but shouldn't be accessed directly
-
-# Static methods and class methods
-class MathUtils:
-    @staticmethod
-    def add(a, b):  # Doesn't need self or cls
-        return a + b
-    
-    @classmethod
-    def from_string(cls, string_num):  # Takes cls instead of self
-        return cls(int(string_num))
-
-print(MathUtils.add(5, 3))  # 8 - can call without creating instance

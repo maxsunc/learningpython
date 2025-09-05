@@ -7,6 +7,8 @@ class TreeNode:
         self.left = left
         self.right = right
 #BFS checks level count fo tree first (using queue) ( leftmost bfs)
+#If you're optimizing to find the shortest possible route 
+
 def walkBFS(tree):
     queue = deque()
     queue.append(tree)
@@ -21,6 +23,7 @@ def walkBFS(tree):
 
 
 #DFS checks children first (3 versions, pre order, in order, post order)
+# when we want to know if a route exists
 # every DFS uses a stack
 #first method 
 def walk(tree):

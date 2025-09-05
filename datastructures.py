@@ -29,6 +29,8 @@ print(3 in my_set) # True
 
 # dictionary (key-value pairs) (hashmap)
 my_dict = {"name": "John", "age": 30}
+#hashable types (can be keys): strings, numbers, tuples
+#unhashable types (cannot be keys): lists, sets, dictionaries
 
 my_dict["age"] = 31 # update value Note: can't increment a non-existent element
 my_dict["city"] = "New York" # add key-value pair

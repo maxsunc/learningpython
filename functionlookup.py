@@ -7,11 +7,7 @@ sorted([3,1,2]) #returns a new sorted list (fire)
 
 #check if is a certain type
 isinstance(10, int) # True
-isinstance(10.5, float) # True
-isinstance("hello", str) # True
-isinstance([1,2,3], list) # True
-isinstance((1,2,3), tuple) # True
-isinstance({1,2,3}, set) # True
+isInstance(1,str) # False
 isinstance({"name": "John"}, dict) # True
 isinstance(10, (int, float)) # True if int or float
 
@@ -27,7 +23,13 @@ chr(65) # returns character of ASCII value 65 = 'A'
 "5".isdigit() # True
 "a".isdigit() # False
 
+#list
+my_list = [1, 2, 3]
+joined = "#".join(str(x) for x in my_list)
+print(joined)  # Output: 1#2#3
+
 #testing code (assetions)
 def testing(h, bounce, window, exp):
     actual = bouncing_ball(h, bounce, window)
     assert_equals(actual, exp)
+
