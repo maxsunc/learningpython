@@ -52,21 +52,30 @@ for key in map:
     print(key) # prints keys
     print(key, ":", {"name": "John", "age": 30}[key]) # prints key and value
 
-#exercises
-while True:
-    command = input(">")
-    command = command.lower()
-    if command == "quit":
-        break
-    elif command == "hello":
-        print("Hello there!")
-    elif command == "help":
-        print("Available commands: hello, quit, help")
-    else:
-        print("I don't understand that")
+# #exercises
+# while True:
+#     command = input(">")
+#     command = command.lower()
+#     if command == "quit":
+#         break
+#     elif command == "hello":
+#         print("Hello there!")
+#     elif command == "help":
+#         print("Available commands: hello, quit, help")
+#     else:
+#         print("I don't understand that")
 
 
 # iterate from 1 to 9
 for i in range(1,10):
     if i % 2 == 0:
         print(i)
+
+nums = [5, 2, 5, 2, 2]
+for i in range(0,number, len(nums)): # for loop
+    print("X" * nums[i])
+
+
+# decreasing for loop
+for i in range(len(nums)-1, -1, -1): # for loop (end is exclusive)
+    print(nums[i])

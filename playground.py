@@ -1,9 +1,4 @@
-stacks = []
-word = "hello world"
-for s in word:
-    stacks.append(s)
+nums = [5, 2, 5, 2, 2]
 
-while len(stacks) != 0:
-    s = stacks.pop()
-    print(s)
-    
+for i in range(len(nums)-1, -1, -1): # for loop
+    print(nums[i])
