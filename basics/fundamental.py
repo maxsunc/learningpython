@@ -79,3 +79,6 @@ for i in range(0,number, len(nums)): # for loop
 # decreasing for loop
 for i in range(len(nums)-1, -1, -1): # for loop (end is exclusive)
     print(nums[i])
+
+
+

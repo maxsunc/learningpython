@@ -12,7 +12,7 @@ def greet(name="Guest"):
     print(f"Hello, {name}")
 
 #example 4 tuple as parameter
-def sum_all(*numbers):
+def sum_all(*numbers) -> int: # returns an int
     total = 0
     for number in numbers:
         total += number

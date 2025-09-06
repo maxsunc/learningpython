@@ -57,3 +57,13 @@ class Student(Person):  # Student inherits from Person
     # New method specific to Student
     def study(self):
         return f"{self.name} is studying"
+    
+
+class Vehicle:
+    # class variable
+    speed = 0
+
+    # instance variable only accessible within the instance
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model

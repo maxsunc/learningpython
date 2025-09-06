@@ -23,6 +23,8 @@ def walkBFS(tree):
 
 
 #DFS checks children first (3 versions, pre order, in order, post order)
+# Time complexity O(n) n = number of nodes
+# Space complexity O(h) h = height of tree (worst case O(n) for
 # when we want to know if a route exists
 # every DFS uses a stack
 #first method 
