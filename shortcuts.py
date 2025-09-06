@@ -24,3 +24,10 @@ class Solution:
 
         dfs(root)
         return self.best
+
+
+# 2D array of hashmaps (dictionaries)
+rows = 3
+cols = 2
+matrix_of_dicts = [[{} for _ in range(cols)] for _ in range(rows)]
+

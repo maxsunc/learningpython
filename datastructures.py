@@ -23,6 +23,7 @@ print(my_tuple[0]) # 1
 my_set = {1, 2, 3}
 my_set.add(4) # add item
 my_set.remove(2) # remove item
+set2 = set() # empty set
 print(my_set) # {1, 3, 4}
 print(2 in my_set) # False
 print(3 in my_set) # True
@@ -31,6 +32,9 @@ print(3 in my_set) # True
 my_dict = {"name": "John", "age": 30}
 #hashable types (can be keys): strings, numbers, tuples
 #unhashable types (cannot be keys): lists, sets, dictionaries
+#note: values can be ANY type!
+# hashmap {int, set}
+unique_map = {1: {1, 2, 3}, 2: {4, 5}}
 
 my_dict["age"] = 31 # update value Note: can't increment a non-existent element
 my_dict["city"] = "New York" # add key-value pair
@@ -76,6 +80,11 @@ print(item) # 1
 #2d list (matrix)
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(matrix[0][0]) # 1
+#initialize 2d list
+m = 3 # number of rows
+n = 4 # number of columns
+matrix = [[0 for _ in range(n)] for _ in range(m)]
+
 
 
 def print_matrix(list_2d):
