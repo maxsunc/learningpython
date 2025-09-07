@@ -64,3 +64,33 @@ tree.right.left = TreeNode(6)
 walkBFS(tree)
 
 #e.x. checking if it has a path
+
+
+# fixed sliding window (array/string)
+def maxSum(arr, k):
+    # find max sum of k consecutive elements in array
+    if len(arr) < k:
+        return None
+    max_sum = 0
+    window_sum = sum(arr[0:k]) # sum of first k elements, up to k-1
+    # window_sum = arr[0] + arr[1] + ... + arr[k-1]
+    max_sum = window_sum # initialize max_sum
+    for i in range(k, len(arr)):
+        window_sum += arr[i] - arr[i - k] # add next element, remove first element of previous window
+        max_sum = max(max_sum, window_sum)
+    return max_sum
+
+# dynamic sliding window (array/string)
+def minSubArrayLen(arr, s):
+    # find min length of subarray with sum >= s
+    n = len(arr)
+    min_length = float('inf')
+    window_sum = 0
+    left = 0
+    for right in range(n):
+        window_sum += arr[right] # expnd window to the right
+        while window_sum >= s: # shrink window from left as long as sum >= s
+            min_length = min(min_length, right - left + 1) # update min_length
+            window_sum -= arr[left] # shrink window from left
+            left += 1 # move left pointer to the right
+    return min_length if min_length != float('inf') else 0

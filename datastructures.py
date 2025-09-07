@@ -4,7 +4,8 @@ my_list = [1, 2, 3]
 my_list.append(4) # add to end
 my_list.insert(0, 0) # add at index 0
 my_list.remove(2) # remove first occurrence of value 2
-my_list.sort() # sort the list
+my_list.pop(1) # remove at index 1 (2)
+my_list.sort() # sort the list (return none)
 value = my_list.pop() # remove and return last item
 value2 = my_list.pop(0) # remove and return item at index 0 (1)
 print (value) # 4
@@ -20,6 +21,7 @@ print(my_tuple[0]) # 1
 #my_tuple[0] = 0 # TypeError: 'tuple' object does not support item assignment
 
 # set (unordered collection of unique items)
+# hashable types only (can be keys in dictionary)
 my_set = {1, 2, 3}
 my_set.add(4) # add item
 my_set.remove(2) # remove item
