@@ -52,3 +52,6 @@ total = sum(nums[1:3]) # nums[1] + nums[2] = 5
 # updating a value at dictionary even if empty:
 my_dict = {}
 my_dict["A"] = my_dict.get("A", 0) + 1
+
+# initializing a dictionary with sets as values
+keys = collections.defaultdict(set)
