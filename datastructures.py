@@ -77,7 +77,9 @@ stack.append(2)
 item = stack.pop() # pop
 print(item) # 2
 item = stack.pop()
-print(item) # 1
+print(item) # 1\
+# stack.peek()
+topValue = stack[-1] if stack else None # returns None if empty
 
 #2d list (matrix)
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -173,3 +175,64 @@ def bfs(start):
                 if neighbor not in visited:
                     queue.append(neighbor)
     return visited
+
+# Heaps (priority queue)
+import heapq
+
+# list to heap
+nums = [5, 3, 7]
+heapq.heapify(nums)  # convert list to heap in-place O(n)
+print("Heapified list:", nums)  # [3, 5, 7]
+
+# Creating a min heap
+min_heap = []
+heapq.heappush(min_heap, 5)
+heapq.heappush(min_heap, 3)
+heapq.heappush(min_heap, 7)
+heapq.heappushpop(min_heap, 4) # pushes value then pops and returns smallest value
+print("Min heap:", min_heap)  # [3, 5, 7] (automatically maintains heap property)
+# Important notes about heap indexing:
+# Its left child is at index 2i + 1
+# Its right child is at index 2i + 2
+# Its parent is at index (i - 1) // 2
+
+# stats:
+# O(log n) for insertion and deletion
+# O(1) for accessing the smallest element
+
+
+# Popping the smallest element (heap automatically reorders)
+smallest = heapq.heappop(min_heap)
+print("Smallest element:", smallest)  # 3
+print("Min heap after pop:", min_heap)  # [5, 7]
+
+# Creating a heap from a list
+nums = [5, 7, 9, 1, 3]
+heapq.heapify(nums)  # convert list to heap in-place
+print("Heapified list:", nums)  # [1, 3, 9, 7, 5]
+
+# Peek at smallest element without removing
+if nums:
+    print("Smallest element (peek):", nums[0])  # 1
+
+# Creating a max heap (Python only has min heap natively)
+# Strategy: multiply by -1 when pushing and popping
+max_heap = []
+heapq.heappush(max_heap, -5)  # Store negative values
+heapq.heappush(max_heap, -3)
+heapq.heappush(max_heap, -7)
+print("Max heap values:", [-x for x in max_heap])  # [7, 3, 5]
+
+# Pop largest element
+largest = -heapq.heappop(max_heap)  # Negate again when popping
+print("Largest element:", largest)  # 7
+
+# Using heap for k largest/smallest elements
+k_smallest = heapq.nsmallest(2, [5, 7, 9, 1, 3])  # [1, 3] 2 smallest elements
+k_largest = heapq.nlargest(2, [5, 7, 9, 1, 3])    # [9, 7] 2 largest elements
+print(f"K smallest: {k_smallest}, K largest: {k_largest}")
+
+# Using heap with key function (tuples for priority)
+tasks = [(4, "Low priority"), (1, "High priority"), (3, "Medium priority")]
+heapq.heapify(tasks)  # Sorts by first element in tuple O(n)
+print("Next task:", heapq.heappop(tasks)[1])  # "High priority"

@@ -33,3 +33,13 @@ def testing(h, bounce, window, exp):
     actual = bouncing_ball(h, bounce, window)
     assert_equals(actual, exp)
 
+
+
+# math
+math.sqrt(16) # 4.0
+math.log(100, 10) # 2.0 log base 10 of 100
+math.factorial(5) # 120
+math.gcd(12, 15) # 3 greatest common divisor
+math.lcm(12, 15) # 60 least common multiple
+math.sin(math.pi / 2) # 1.0
+math.cos(0) # 1.0

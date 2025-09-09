@@ -11,6 +11,8 @@ class Person:
         #NOTE: self is needed to define a function within a class
         self.name = name
         self.age = age
+        # define any new instance variables here
+        self.strength = 5
     
     # Instance method
     def greet(self):
