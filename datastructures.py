@@ -143,3 +143,33 @@ nodeA.neighbors.append(nodeC)
 nodeB.neighbors.append(nodeC)
 print("graph ex:")
 print("node A neighbors: " + str([n.val for n in nodeA.neighbors]))  # Output: ['B', 'C']
+
+
+# adjacency list (use hashmap/dictionary), enables you to run dfs/bfs
+graph = {
+    'A': ['B', 'C'],
+    'B': ['C'],
+    'C': []
+}
+# DFS function
+def dfs(node, visited):
+    if node in visited:
+        return
+    print("Visiting:", node)
+    visited.add(node)
+    for neighbor in graph.get(node, []):
+        dfs(neighbor, visited)
+
+# BFS function
+def bfs(start):
+    visited = set()
+    queue = deque([start])
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            print("Visiting:", node)
+            visited.add(node)
+            for neighbor in graph.get(node, []):
+                if neighbor not in visited:
+                    queue.append(neighbor)
+    return visited
