@@ -43,3 +43,5 @@ math.gcd(12, 15) # 3 greatest common divisor
 math.lcm(12, 15) # 60 least common multiple
 math.sin(math.pi / 2) # 1.0
 math.cos(0) # 1.0
+math.tan(math.pi / 4) # 1.0
+math.radians(90) # convert degrees to radians

@@ -7,4 +7,5 @@ a & b             # 12 = 0000 1100 (AND)
 a | b             # 61 = 0011 1101 (OR)
 a ^ b             # 49 = 0011 0001 (XOR)
 ~a               # -61 = 1100 0011 (NOT)
+
 # Note: Python does not have unsigned integers, so the result of NOT is -x-1
