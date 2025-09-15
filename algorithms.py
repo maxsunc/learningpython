@@ -94,3 +94,21 @@ def minSubArrayLen(arr, s):
             window_sum -= arr[left] # shrink window from left
             left += 1 # move left pointer to the right
     return min_length if min_length != float('inf') else 0
+
+
+
+# two pointers (array/string)
+def twoSum(arr, target):
+    # assumes arr is sorted
+    # find two numbers that add up to target O(n) time O(1) space
+    left = 0
+    right = len(arr) - 1
+    while left < right:
+        current_sum = arr[left] + arr[right]
+        if current_sum == target:
+            return (left, right)
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+    return None
