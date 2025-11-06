@@ -86,9 +86,11 @@ def minSubArrayLen(arr, s):
     n = len(arr)
     min_length = float('inf')
     window_sum = 0
+    # left and right pointers
     left = 0
     for right in range(n):
-        window_sum += arr[right] # expnd window to the right
+        window_sum += arr[right] # expand window to the right
+        # generic shrink condition
         while window_sum >= s: # shrink window from left as long as sum >= s
             min_length = min(min_length, right - left + 1) # update min_length
             window_sum -= arr[left] # shrink window from left

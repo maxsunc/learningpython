@@ -82,3 +82,10 @@ for i in range(len(nums)-1, -1, -1): # for loop (end is exclusive)
 
 
 
+# getting input
+name = input("Enter your name: ")
+
+print("Hello " + name) # stored as string
+
+age = int(input("Enter your age: ")) # convert to int
+print("You are " + str(age) + " years old") # convert back to string

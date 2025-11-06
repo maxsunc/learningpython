@@ -11,3 +11,6 @@ def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]: # optional
         self.invertTree(root.left) # recursion
         self.invertTree(root.right)
         return root
+    
+
+    
