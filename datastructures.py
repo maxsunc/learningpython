@@ -30,6 +30,8 @@ print(my_set) # {1, 3, 4}
 print(2 in my_set) # False
 print(3 in my_set) # True
 
+defaultdict(list) # default value is empty list
+
 # dictionary (key-value pairs) (hashmap)
 my_dict = {"name": "John", "age": 30}
 #hashable types (can be keys): strings, numbers, tuples

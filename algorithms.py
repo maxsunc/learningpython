@@ -114,3 +114,33 @@ def twoSum(arr, target):
         else:
             right -= 1
     return None
+
+
+# binary search
+def binarySearch(arr, target):
+    l, r = 0, len(arr)-1
+
+    while r >= l:
+        m = (l + r)//2
+        if arr[m] == target:
+            return m
+        elif arr[m] > target:
+            r = m - 1
+        else:
+            l = m + 1
+    return -1
+        
+def monotonicStackProblems(arr):
+    # example: next greater element
+    n = len(arr)
+    result = [-1] * n
+    stack = [] # store indicies that we haven't found next greater for yet
+
+    for i in range(0,len(arr)):
+        while len(stack) > 0 and arr[i] > arr[stack[-1]]: # while stack has elements and element at arr[i] is greater than stack[-1]
+            # we have found the index greater
+            result[i] = stack[-1]
+            stack.pop()
+        # now look for next greater leement of this current element
+        stack.append(i)
+    return result
