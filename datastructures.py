@@ -186,6 +186,9 @@ nums = [5, 3, 7]
 heapq.heapify(nums)  # convert list to heap in-place O(n)
 print("Heapified list:", nums)  # [3, 5, 7]
 
+tuples = [(2, 'task2'), (1, 'task1'), (3, 'task3')]
+heapq.heapify(tuples) # heapified by first element in tuple O(n)
+
 # Creating a min heap
 min_heap = []
 heapq.heappush(min_heap, 5)
